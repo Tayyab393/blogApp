@@ -35,47 +35,52 @@ const Header = () => {
   };
   return (
     <>
-      <AppBar position="sticky">
+      <AppBar position='sticky'>
         <Toolbar>
-          <Typography variant="h4">My Blog APP</Typography>
+          <Typography variant='h4'>My Blog APP</Typography>
           {isLogin && (
-            <Box display={"flex"} marginLeft="auto" marginRight={"auto"}>
+            <Box display={'flex'} marginLeft='auto' marginRight={'auto'}>
               <Tabs
-                textColor="inherit"
+                textColor='inherit'
                 value={value}
                 onChange={(e, val) => setValue(val)}
               >
-                <Tab label="Blogs" LinkComponent={Link} to="/blogs" />
-                <Tab label="My Blogs" LinkComponent={Link} to="/my-blogs" />
+                <Tab label='Blogs' LinkComponent={Link} to='/blogs' />
+                <Tab label='My Blogs' LinkComponent={Link} to='/my-blogs' />
                 <Tab
-                  label="Create Blog"
+                  label='Create Blog'
                   LinkComponent={Link}
-                  to="/create-blog"
+                  to='/create-blog'
+                />
+                <Tab
+                  label='Calculator'
+                  LinkComponent={Link}
+                  to='/calculator'
                 />
               </Tabs>
             </Box>
           )}
-          <Box display={"flex"} marginLeft="auto">
+          <Box display={'flex'} marginLeft='auto'>
             {!isLogin && (
               <>
                 <Button
-                  sx={{ margin: 1, color: "white" }}
+                  sx={{ margin: 1, color: 'white' }}
                   LinkComponent={Link}
-                  to="/login"
+                  to='/login'
                 >
                   Login
                 </Button>
                 <Button
-                  sx={{ margin: 1, color: "white" }}
+                  sx={{ margin: 1, color: 'white' }}
                   LinkComponent={Link}
-                  to="/register"
+                  to='/register'
                 >
                   Register
                 </Button>
               </>
             )}
             {isLogin && (
-              <Button onClick={handleLogout} sx={{ margin: 1, color: "white" }}>
+              <Button onClick={handleLogout} sx={{ margin: 1, color: 'white' }}>
                 Logout
               </Button>
             )}
@@ -83,7 +88,7 @@ const Header = () => {
         </Toolbar>
       </AppBar>
     </>
-  );
+  )
 };
 
 export default Header;
